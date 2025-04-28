@@ -1,1 +1,4 @@
 3. Le répertoire `.github/workflows` est utilisé par GitHub Actions pour stocker les fichiers de définition de workflow. Ces fichiers, écrits en YAML, décrivent les processus automatisés (comme l'intégration continue, le déploiement continu, etc.) qui s'exécutent en réponse à des événements spécifiques dans le dépôt (par exemple, un push, une pull request, une publication de release).
+
+8. En accédant à l'onglet "Actions" après un push sur un dépôt GitHub où un workflow est configuré pour se déclencher sur cet événement (comme c'est le cas avec le fichier `main.yml` créé précédemment qui se déclenche sur `push`), on observe une nouvelle exécution du workflow. Cette exécution apparaît dans la liste des workflows, indiquant son statut (en attente, en cours, succès, échec), le commit et la branche concernés. En cliquant dessus, on peut visualiser les détails de chaque job et les logs des étapes exécutées.
+
