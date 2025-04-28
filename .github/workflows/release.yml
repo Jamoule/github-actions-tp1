@@ -1,0 +1,19 @@
+name: Create Release
+on:
+  push:
+    tags:
+      - 'v*' # Trigger on tags like v1.0, v2.1.1, etc.
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the built-in token
+      with:
+        tag_name: ${{ github.ref_name }} # Use the tag name that triggered the workflow
+        release_name: Release ${{ github.ref_name }} # Name the release e.g., "Release v1.0"
+        draft: false # Create a published release, not a draft
+        prerelease: false # Mark as a full release, not a pre-release 

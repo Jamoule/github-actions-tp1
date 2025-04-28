@@ -35,4 +35,4 @@
 
 30. En poussant plusieurs fois des commits modifiant `metrics.py` (ou `model.py`) sur la branche `main`, on déclenche à chaque fois le workflow "Evaluate Model". Comme l'accuracy est maintenant générée aléatoirement entre 0.85 et 0.95, et que le workflow échoue si elle est inférieure à 0.9, on constate que les exécutions du workflow dans l'onglet Actions échouent de manière intermittente (environ 50% du temps), en fonction de la valeur aléatoire générée pour l'accuracy lors de chaque exécution spécifique.
 
-31.
+33. Une interface apparaît demandant de choisir une valeur pour l'input `environment`. Après avoir choisi une option et lancé l'exécution, on constate que le workflow démarre.
