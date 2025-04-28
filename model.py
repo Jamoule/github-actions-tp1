@@ -7,6 +7,7 @@ def predict_sentiment(text):
     Returns:
         'positive', 'negative', or 'neutral' sentiment.
     """
+    # Simple keyword-based sentiment analysis
     if not text:
         return "neutral"
     if "happy" in text.lower() or "good" in text.lower():
