@@ -20,4 +20,14 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: model-metrics
-        path: metrics.json 
+        path: metrics.json
+    - name: Check metrics threshold
+      run: |
+        ACCURACY=$(python -c "import json; f=open('metrics.json'); data=json.load(f); print(data['accuracy']); f.close()")
+        echo "Model accuracy: $ACCURACY"
+        if (( $(echo "$ACCURACY < 0.9" | bc -l) )); then
+          echo "❌ Model accuracy below threshold (0.9)"
+          exit 1
+        else
+          echo "✅ Model accuracy above threshold (0.9)"
+        fi 

@@ -23,4 +23,14 @@
 
 24. On observe dans l'onglet "Actions" que le workflow "Docker Build" exécute les étapes de construction et de test de l'image Docker.
 
+27 . 
+```
+{
+  "accuracy": 0.976,
+  "precision": 0.843,
+  "recall": 0.843,
+  "f1_score": 0.885
+}
+```
 
+28
