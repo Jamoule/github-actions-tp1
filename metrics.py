@@ -1,6 +1,6 @@
 import json
 import random
-
+ 
 def evaluate_model():
     # Simulation d'évaluation
     metrics = {
