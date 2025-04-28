@@ -1,0 +1,24 @@
+name: Manual Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+jobs:
+  manual-job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Echo selected environment
+      run: echo "Running tests in ${{ github.event.inputs.environment }} environment"
+    - name: Run tests
+      run: |
+        pip install -r requirements.txt
+        pytest 
